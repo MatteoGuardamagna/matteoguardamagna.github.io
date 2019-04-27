@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Crimson+Text|Raleway');
 body {
-  background-color: rgb(245,245,245);
+  background-color: white;
   font-size: large;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  color: rgb(40,40,40);
+  color: rgb(100,100,100);
   font-size: large;
   width: 35em;
   font-weight: regular;
