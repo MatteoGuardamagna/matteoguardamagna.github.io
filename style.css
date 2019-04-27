@@ -1,25 +1,49 @@
-@import url(//fonts.googleapis.com/css?family=Open+Sans);
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text|Raleway');
 body {
-  background-color: rgb(70,70,70);
-  font-family: 'Open Sans', serif;
+  background-color: rgb(245,245,245);
   font-size: large;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: rgb(40,40,40);
+  font-size: large;
+  width: 35em;
+  font-weight: regular;
+  font-family: 'Raleway', serif;
+  font-weight: light;
 }
 h1 {
-  color: white;
-  margin-left: auto;
-  margin-right: auto;
-  text-align:center;
-  font-family: 'Crimson', Sans-serif;
+  color: rgb(128, 0, 0);
   font-weight: normal;
-  font-size: 60;
+  font-family: 'Crimson Text', serif;
+}
+h2 {
+  color: rgb(160,160,160);
+  font-family: 'Raleway', sans-serif;
+  font-weight: light;
 }
 p {
-  color: rgb(230,230,230);
-  margin-left: auto;
-  margin-right: auto;
-  text-align:center;
-  width: 20em
+
 }
 a {
-  color: rgb(160,160,160);
+  color: rgb(128, 0, 0);
+}
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active {
+  text-decoration: underline;
+}
+ul {
+  list-style-type: circle;
+  list-style-position: inside;
+  padding-right: 5em;
+  padding-left: 5em;
+  margin-top: 0.5em;
 }
