@@ -1,12 +1,17 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans);
 body {
   background-color: rgb(70,70,70);
+  font-family: 'Open Sans', serif;
+  font-size: large;
 }
 h1 {
   color: white;
   margin-left: auto;
   margin-right: auto;
   text-align:center;
-  font-family: Helvetica, sans-serif
+  font-family: 'Crimson', Sans-serif;
+  font-weight: normal;
+  font-size: 60;
 }
 p {
   color: rgb(230,230,230);
