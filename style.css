@@ -4,7 +4,7 @@ body {
   font-size: large;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
+  text-align: left;
   color: rgb(100,100,100);
   font-size: large;
   width: 35em;
@@ -16,10 +16,11 @@ h1 {
   color: rgb(128, 0, 0);
   font-weight: normal;
   font-family: 'Crimson Text', serif;
+  text-align: center;
 }
 h2 {
   color: rgb(160,160,160);
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', serif;
   font-weight: light;
 }
 p {
@@ -43,7 +44,14 @@ a:active {
 ul {
   list-style-type: circle;
   list-style-position: inside;
-  padding-right: 5em;
-  padding-left: 5em;
+  margin-right: 1em;
+  margin-left: 1em;
   margin-top: 0.5em;
+}
+
+h3 {
+  text-align: center;
+  font-size: large;
+  font-weight: normal;
+
 }
