@@ -13,7 +13,7 @@ body {
   font-weight: light;
 }
 h1 {
-  color: rgb(128, 0, 0);
+  color: rgb(0, 0, 128);
   font-weight: normal;
   font-family: 'Crimson Text', serif;
   text-align: center;
@@ -27,7 +27,7 @@ p {
 
 }
 a {
-  color: rgb(128, 0, 0);
+  color: rgb(0, 0, 128);
 }
 a:link {
   text-decoration: none;
