@@ -42,11 +42,11 @@ h1 {
 /* --- THIS IS WHERE YOU CAN CHANGE THE TITLE SIZES --- */
 h2 {
     color: rgb(80, 80, 80);
-    font-weight: 700; /* Bolding the header to make it stand out */
+    font-weight: 700;
     text-align: left;
     line-height: 1.4;
     margin-bottom: 1em;
-    font-size: 1.05em; /* --- CHANGED --- Sets size equal to paragraph text */
+    font-size: 1.2em; /* --- CHANGED --- Made titles 20% bigger. Adjust as you like! */
 }
 
 h3 {
@@ -57,7 +57,7 @@ h3 {
 p {
     margin-bottom: 1em;
     text-align: justify;
-    font-size: 1em; /* --- CHANGED --- Explicitly sets size */
+    font-size: 1em;
 }
 a {
     color: rgb(0, 0, 128);
@@ -110,8 +110,10 @@ main {
     flex-grow: 1;
 }
 
-.aims-section .description-container,
-.aims-section h2,
+/* --- ALIGNMENT FIX --- This now correctly aligns all text in the 2nd section to the right */
+.aims-section .description-container {
+    text-align: right;
+}
 .aims-section p {
     text-align: right;
 }
@@ -137,7 +139,8 @@ main {
         max-width: 300px;
         margin-bottom: 20px;
     }
-    h2, .aims-section h2, .aims-section p, .bio-section p { 
-        text-align: center;
+    /* This makes all text centered on mobile, including the right-aligned text */
+    .description-container, h2, p {
+        text-align: center !important;
     }
 }
