@@ -10,7 +10,7 @@
     padding: 0;
 }
 body {
-    background-color: white;
+    background-color: grey;
     font-family: 'Raleway', serif;
     font-weight: 400;
     font-size: large;
@@ -40,7 +40,7 @@ h1 {
 }
 h2 {
     color: rgb(80, 80, 80); /* Darker color for section heading */
-    font-weight: 400; /* Normal weight, as the <strong> tag will make part of it bold */
+    font-weight: 300; /* Normal weight
     text-align: left;
     line-height: 1.4;
     margin-bottom: 1em;
@@ -89,7 +89,7 @@ main {
     margin-bottom: 20px; /* Space below each section */
 }
 
-/* --- NEW RULE for the mirrored layout --- */
+/* --- for the mirrored layout --- */
 .top-container.reverse {
     flex-direction: row-reverse;
 }
@@ -109,12 +109,12 @@ main {
     flex-grow: 1;
 }
 
-/* --- NEW RULE for the separator line --- */
+<!-- /* ---  for the separator line --- */
 .section-divider {
     border: none;
     border-top: 1px dashed rgb(200, 200, 200);
     margin: 40px auto;
-}
+} -->
 
 /*
 ====================================
