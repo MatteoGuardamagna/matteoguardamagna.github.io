@@ -10,7 +10,7 @@
     padding: 0;
 }
 body {
-    background-color: grey;
+    background-color: white;
     font-family: 'Raleway', serif;
     font-weight: 400;
     font-size: large;
@@ -39,8 +39,8 @@ h1 {
     margin-bottom: 20px;
 }
 h2 {
-    color: rgb(80, 80, 80); /* Darker color for section heading */
-    font-weight: 300; /* Normal weight
+    color: rgb(80, 80, 80);
+    font-weight: 400;
     text-align: left;
     line-height: 1.4;
     margin-bottom: 1em;
@@ -83,13 +83,11 @@ main {
 /* --- Container for both image/text sections --- */
 .top-container {
     display: flex;
-    align-items: center;
+    align-items: stretch; /* --- CHANGED --- Was 'center', now stretches items to match height */
     gap: 30px;
-    margin-top: 20px; /* Space above each section */
-    margin-bottom: 20px; /* Space below each section */
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
-
-/* --- for the mirrored layout --- */
 .top-container.reverse {
     flex-direction: row-reverse;
 }
@@ -97,7 +95,7 @@ main {
 .picture-container {
     flex-shrink: 0;
     width: 200px;
-    height: 200px;
+    /* --- CHANGED --- Removed fixed 'height: 200px;' to allow it to grow */
 }
 .picture-container img {
     width: 100%;
@@ -109,12 +107,25 @@ main {
     flex-grow: 1;
 }
 
- /* ---  for the separator line --- */
-/*.section-divider {
+/* --- NEW RULE --- Aligns text to the right only in the second section */
+.aims-section .description-container {
+    text-align: right;
+}
+/* We also need to adjust the h2 inside this section */
+.aims-section h2 {
+    text-align: right;
+}
+/* And the paragraphs */
+.aims-section p {
+    text-align: right;
+}
+
+
+.section-divider {
     border: none;
     border-top: 1px dashed rgb(200, 200, 200);
     margin: 40px auto;
-} */
+}
 
 /*
 ====================================
@@ -123,13 +134,15 @@ main {
 */
 @media (max-width: 768px) {
     .top-container,
-    .top-container.reverse { /* This rule now applies to both normal and reversed containers */
-        flex-direction: column; /* Stack vertically on mobile */
+    .top-container.reverse {
+        flex-direction: column;
     }
     .picture-container {
+        width: 100%; /* Allow picture to be full width on mobile if desired */
+        max-width: 300px; /* But not too big */
         margin-bottom: 20px;
     }
-    h2 {
+    h2, .aims-section h2, .aims-section p { /* Center all text on mobile */
         text-align: center;
     }
 }
