@@ -1,148 +1,50 @@
 /*
 ====================================
-1. FONT IMPORT & GLOBAL STYLES
+5. INSPIRATIONS PAGE STYLES
 ====================================
 */
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Raleway:wght@300;400;700&display=swap');
-* {
-    box-sizing: border-box;
-    margin: 0;
+
+.page-title {
+    text-align: center;
+    margin: 20px 0 40px 0;
+}
+
+.paper-list {
+    list-style: none;
     padding: 0;
 }
-body {
-    background-color: white;
-    font-family: 'Raleway', serif;
-    font-weight: 400;
-    font-size: large;
-    color: rgb(100, 100, 100);
-    line-height: 1.6;
-}
-.container {
-    max-width: 60em;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 20px;
-}
 
-/*
-====================================
-2. TYPOGRAPHY
-====================================
-*/
-h1, h2, h3 {
-    font-family: 'Raleway', serif;
-}
-h1 {
-    color: rgb(0, 0, 128);
-    font-weight: 400;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-h2 {
-    color: rgb(80, 80, 80);
-    font-weight: 700;
+.paper-list li {
+    margin-bottom: 3em;
+    padding-bottom: 1.5em;
+    border-bottom: 1px dashed rgb(220, 220, 220);
     text-align: left;
-    line-height: 1.4;
-    margin-bottom: 1em;
-    font-size: 1.2em;
 }
 
-h3 {
-    text-align: center;
-    font-size: large;
-    font-weight: 400;
+.paper-list li:last-child {
+    border-bottom: none;
 }
-p {
-    margin-bottom: 1em;
-    text-align: justify;
+
+.paper-citation {
     font-size: 1em;
-}
-a {
-    color: rgb(0, 0, 128);
-    text-decoration: none;
-}
-a:hover, a:active {
-    text-decoration: underline;
+    line-height: 1.5;
+    margin-bottom: 0.5em;
+    color: #555;
 }
 
-/*
-====================================
-3. LAYOUT & COMPONENTS
-====================================
-*/
-header {
-    padding: 40px 0 20px 0;
-    text-align: center;
-}
-.main-nav a {
-    margin: 0 15px;
-    font-size: large;
-    font-weight: normal;
-}
-main {
-    padding: 20px 0 40px 0;
+.paper-citation a {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #000080; /* Navy blue from your main theme */
 }
 
-.top-container {
-    display: flex;
-    align-items: stretch; 
-    gap: 30px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-.top-container.reverse {
-    flex-direction: row-reverse;
-}
-
-.picture-container {
-    flex-shrink: 0;
-    width: 200px;
-}
-.picture-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-}
-.description-container {
-    flex-grow: 1;
+.paper-note {
+    font-size: 1em;
+    text-align: justify;
+    color: #333;
+    font-style: italic;
+    border-left: 3px solid #eee;
+    padding-left: 1em;
+    margin-top: 1em;
 }
 
-.aims-section .description-container {
-    text-align: right;
-}
-.aims-section p {
-    text-align: right;
-}
-
-/* --- NEW RULE ADDED --- This specifically targets the 2nd title */
-.aims-section h2 {
-    text-align: right;
-}
-
-.section-divider {
-    border: none;
-    border-top: 1px dashed rgb(200, 200, 200);
-    margin: 40px auto;
-}
-
-/*
-====================================
-4. RESPONSIVE (MOBILE) STYLES
-====================================
-*/
-@media (max-width: 768px) {
-    .top-container,
-    .top-container.reverse {
-        flex-direction: column;
-    }
-    .picture-container {
-        width: 100%; 
-        max-width: 300px;
-        margin-bottom: 20px;
-    }
-    .description-container, h2, p {
-        text-align: center !important;
-    }
-}
