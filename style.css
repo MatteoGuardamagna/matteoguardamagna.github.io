@@ -109,12 +109,12 @@ main {
     flex-grow: 1;
 }
 
-<!-- /* ---  for the separator line --- */
-.section-divider {
+ /* ---  for the separator line --- */
+/*.section-divider {
     border: none;
     border-top: 1px dashed rgb(200, 200, 200);
     margin: 40px auto;
-} -->
+} */
 
 /*
 ====================================
