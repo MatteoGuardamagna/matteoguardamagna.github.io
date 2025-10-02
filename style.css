@@ -46,7 +46,7 @@ h2 {
     text-align: left;
     line-height: 1.4;
     margin-bottom: 1em;
-    font-size: 1.5em; /* --- CHANGED --- Sets size equal to paragraph text */
+    font-size: 1.2em; /* --- CHANGED --- Sets size equal to paragraph text */
 }
 
 h3 {
@@ -57,7 +57,7 @@ h3 {
 p {
     margin-bottom: 1em;
     text-align: justify;
-    font-size: 1.1em; /* --- CHANGED --- Explicitly sets size */
+    font-size: 1em; /* --- CHANGED --- Explicitly sets size */
 }
 a {
     color: rgb(0, 0, 128);
