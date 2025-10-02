@@ -39,14 +39,13 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* --- THIS IS WHERE YOU CAN CHANGE THE TITLE SIZES --- */
 h2 {
     color: rgb(80, 80, 80);
     font-weight: 700;
     text-align: left;
     line-height: 1.4;
     margin-bottom: 1em;
-    font-size: 1.2em; /* --- CHANGED --- Made titles 20% bigger. Adjust as you like! */
+    font-size: 1.2em;
 }
 
 h3 {
@@ -110,11 +109,15 @@ main {
     flex-grow: 1;
 }
 
-/* --- ALIGNMENT FIX --- This now correctly aligns all text in the 2nd section to the right */
 .aims-section .description-container {
     text-align: right;
 }
 .aims-section p {
+    text-align: right;
+}
+
+/* --- NEW RULE ADDED --- This specifically targets the 2nd title */
+.aims-section h2 {
     text-align: right;
 }
 
@@ -139,7 +142,6 @@ main {
         max-width: 300px;
         margin-bottom: 20px;
     }
-    /* This makes all text centered on mobile, including the right-aligned text */
     .description-container, h2, p {
         text-align: center !important;
     }
