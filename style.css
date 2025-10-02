@@ -38,13 +38,17 @@ h1 {
     text-align: center;
     margin-bottom: 20px;
 }
+
+/* --- THIS IS WHERE YOU CAN CHANGE THE TITLE SIZES --- */
 h2 {
     color: rgb(80, 80, 80);
-    font-weight: 400;
+    font-weight: 700; /* Bolding the header to make it stand out */
     text-align: left;
     line-height: 1.4;
     margin-bottom: 1em;
+    font-size: 1em; /* --- CHANGED --- Sets size equal to paragraph text */
 }
+
 h3 {
     text-align: center;
     font-size: large;
@@ -53,6 +57,7 @@ h3 {
 p {
     margin-bottom: 1em;
     text-align: justify;
+    font-size: 1em; /* --- CHANGED --- Explicitly sets size */
 }
 a {
     color: rgb(0, 0, 128);
@@ -80,10 +85,9 @@ main {
     padding: 20px 0 40px 0;
 }
 
-/* --- Container for both image/text sections --- */
 .top-container {
     display: flex;
-    align-items: stretch; /* --- CHANGED --- Was 'center', now stretches items to match height */
+    align-items: stretch; 
     gap: 30px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -95,7 +99,6 @@ main {
 .picture-container {
     flex-shrink: 0;
     width: 200px;
-    /* --- CHANGED --- Removed fixed 'height: 200px;' to allow it to grow */
 }
 .picture-container img {
     width: 100%;
@@ -107,19 +110,11 @@ main {
     flex-grow: 1;
 }
 
-/* --- NEW RULE --- Aligns text to the right only in the second section */
-.aims-section .description-container {
-    text-align: right;
-}
-/* We also need to adjust the h2 inside this section */
-.aims-section h2 {
-    text-align: right;
-}
-/* And the paragraphs */
+.aims-section .description-container,
+.aims-section h2,
 .aims-section p {
     text-align: right;
 }
-
 
 .section-divider {
     border: none;
@@ -138,11 +133,11 @@ main {
         flex-direction: column;
     }
     .picture-container {
-        width: 100%; /* Allow picture to be full width on mobile if desired */
-        max-width: 300px; /* But not too big */
+        width: 100%; 
+        max-width: 300px;
         margin-bottom: 20px;
     }
-    h2, .aims-section h2, .aims-section p { /* Center all text on mobile */
+    h2, .aims-section h2, .aims-section p, .bio-section p { 
         text-align: center;
     }
 }
