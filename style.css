@@ -1,108 +1,154 @@
-@import url('https://fonts.googleapis.com/css?family=Crimson+Text|Raleway');
-body {
-  background-color: white;
-  font-size: large;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-  color: rgb(100,100,100);
-  font-size: large;
-  width: 35em;
-  font-weight: regular;
-  font-family: 'Raleway', serif;
-  font-weight: light;
-}
-h1 {
-  color: rgb(0, 0, 128);
-  font-weight: normal;
-  font-family: 'Raleway', serif;
-  text-align: center;
-}
-h2 {
-  color: rgb(160,160,160);
-  font-family: 'Raleway', serif;
-  font-weight: light;
-}
-p {
+/*
+====================================
+1. FONT IMPORT & GLOBAL STYLES
+====================================
+*/
 
+/* import Google Fonts with specific weights */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Raleway:wght@300;400;700&display=swap');
+
+/* A common best practice for box-sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-a {
-  color: rgb(0, 0, 128);
+
+body {
+    background-color: white;
+    font-family: 'Raleway', serif;
+    font-weight: 400; /* 400 is the standard for 'normal' or 'regular' weight */
+    font-size: large;
+    color: rgb(100, 100, 100);
+    line-height: 1.6; /* Adds comfortable spacing between lines of text */
 }
-a:link {
-  text-decoration: none;
+
+/* A reusable container to center content */
+.container {
+    max-width: 45em; /* This creates the main content column */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px; /* Adds space on the sides for smaller screens */
 }
-a:visited {
-  text-decoration: none;
+
+
+/*
+====================================
+2. TYPOGRAPHY
+====================================
+*/
+
+h1, h2, h3 {
+    font-family: 'Raleway', serif;
 }
-a:hover {
-  text-decoration: underline;
+
+h1 {
+    color: rgb(0, 0, 128);
+    font-weight: 400; /* normal */
+    text-align: center;
 }
-a:active {
-  text-decoration: underline;
-}
-ul {
-  list-style-type: circle;
-  list-style-position: inside;
-  margin-right: 1em;
-  margin-left: 1em;
-  margin-top: 0.5em;
+
+h2 {
+    color: rgb(160, 160, 160);
+    font-weight: 300; /* light */
 }
 
 h3 {
-  text-align: center;
-  font-size: large;
-  font-weight: normal;
-
+    text-align: center;
+    font-size: large;
+    font-weight: 400; /* normal */
 }
 
-/* Styling for the new profile section */
+p {
+    margin-bottom: 1em; /* Adds space below paragraphs */
+}
 
+a {
+    color: rgb(0, 0, 128);
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: circle;
+    list-style-position: inside;
+    margin: 0.5em 1em 1em 1em;
+}
+
+
+/*
+====================================
+3. LAYOUT & COMPONENTS
+====================================
+*/
+
+/* Header styles */
+header {
+    padding: 40px 0 20px 0;
+    text-align: center;
+}
+
+.main-nav a {
+    margin: 0 15px; /* Adds space between the navigation links */
+    font-size: large;
+    font-weight: normal;
+}
+
+/* Main content styles */
+main {
+    padding: 20px 0 40px 0;
+}
+
+/* Profile Section */
 .profile-section {
-    padding: 40px 20px; /* Some space on the top/bottom and sides */
-    max-width: 900px;   /* Maximum width of the section */
-    margin: 0 auto;     /* This centers the section on the page */
+    margin-top: 2em; /* Space between header and this section */
 }
 
 .top-container {
-    display: flex;          /* Aligns elements side-by-side */
-    align-items: center;    /* Vertically aligns the picture and text */
-    gap: 30px;              /* Adds space between the picture and the text */
-    margin-bottom: 30px;    /* Space between the top part and the additional text */
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
 }
 
 .picture-container {
-    flex-shrink: 0;   /* Prevents the image container from shrinking */
-    width: 200px;     /* Sets a fixed width for the picture container */
-    height: 200px;    /* Sets a fixed height to make it a square */
+    flex-shrink: 0;
+    width: 200px;
+    height: 200px;
 }
 
 .picture-container img {
-    width: 100%;        /* The image will fill the full width of its container */
-    height: 100%;       /* The image will fill the full height of its container */
-    object-fit: cover;  /* Ensures the image covers the area without being distorted */
-    border-radius: 8px; /* Adds slightly rounded corners (a nice modern touch!) */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 .description-container {
-    flex-grow: 1; /* Allows this container to take up all the remaining space */
+    flex-grow: 1;
 }
 
-.additional-text-container {
-    text-align: left; /* Aligns the text to the left */
-}
+/*
+====================================
+4. RESPONSIVE (MOBILE) STYLES
+====================================
+*/
 
-/* --- Media Query for Mobile Devices --- */
-/* When the screen is 768px wide or less, these rules will apply */
 @media (max-width: 768px) {
     .top-container {
-        flex-direction: column; /* Stacks the picture and description vertically */
-        text-align: center;     /* Centers the text when they are stacked */
+        flex-direction: column;
+        text-align: center;
     }
 
     .picture-container {
-        margin-bottom: 20px; /* Adds space below the picture in the stacked view */
+        margin-bottom: 20px;
+    }
+
+    .main-nav a {
+        margin: 0 10px;
     }
 }
-
-
