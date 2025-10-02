@@ -4,7 +4,7 @@
 ====================================
 */
 
-/* import Google Fonts with specific weights */
+/* A more modern way to import Google Fonts with specific weights */
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Raleway:wght@300;400;700&display=swap');
 
 /* A common best practice for box-sizing */
@@ -25,7 +25,7 @@ body {
 
 /* A reusable container to center content */
 .container {
-    max-width: 45em; /* This creates the main content column */
+    max-width: 60em; /* CHANGED - Increased from 45em to make the layout wider */
     margin-left: auto;
     margin-right: auto;
     padding: 0 20px; /* Adds space on the sides for smaller screens */
@@ -46,6 +46,7 @@ h1 {
     color: rgb(0, 0, 128);
     font-weight: 400; /* normal */
     text-align: center;
+    margin-bottom: 20px; /* CHANGED - Added space below the main title */
 }
 
 h2 {
@@ -61,6 +62,11 @@ h3 {
 
 p {
     margin-bottom: 1em; /* Adds space below paragraphs */
+}
+
+/* This is a new rule for your specific request */
+.profile-section p {
+    text-align: justify; /* CHANGED - Justifies the paragraph text in the profile section */
 }
 
 a {
