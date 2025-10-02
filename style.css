@@ -3,22 +3,26 @@
 1. FONT IMPORT & GLOBAL STYLES
 ====================================
 */
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Raleway:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400&family=Raleway:wght@400;700&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
 body {
     background-color: white;
-    font-family: 'Raleway', serif;
+    /* Using the serif font for the main body text */
+    font-family: 'Crimson Text', serif;
     font-weight: 400;
     font-size: large;
-    color: rgb(100, 100, 100);
-    line-height: 1.6;
+    color: rgb(80, 80, 80); /* Slightly darker text for better readability */
+    line-height: 1.7;
 }
+
 .container {
-    max-width: 60em;
+    max-width: 45em; /* A good width for centered, readable text */
     margin-left: auto;
     margin-right: auto;
     padding: 0 20px;
@@ -29,42 +33,44 @@ body {
 2. TYPOGRAPHY
 ====================================
 */
-h1, h2, h3 {
-    font-family: 'Raleway', serif;
+
+/* Use the sans-serif font for headers and navigation */
+h1, h2, h3, .main-nav a {
+    font-family: 'Raleway', sans-serif;
 }
+
 h1 {
     color: rgb(0, 0, 128);
-    font-weight: 400;
+    font-weight: 700; /* Bolder for more impact */
     text-align: center;
     margin-bottom: 20px;
 }
+
 h2 {
-    color: rgb(160, 160, 160);
-    font-weight: 300;
+    font-weight: 700; /* Bold */
+    color: black;
+    margin-bottom: 0.5em;
 }
-h3 {
-    text-align: center;
-    font-size: large;
-    font-weight: 400;
+
+.subtitle {
+    font-family: 'Crimson Text', serif;
+    font-style: italic;
+    color: rgb(100, 100, 100);
+    margin-bottom: 1.5em;
 }
+
 p {
     margin-bottom: 1em;
 }
-.profile-section p {
-    text-align: justify;
-}
+
 a {
     color: rgb(0, 0, 128);
     text-decoration: none;
+    font-weight: 700;
 }
-a:hover,
-a:active {
+
+a:hover {
     text-decoration: underline;
-}
-ul {
-    list-style-type: circle;
-    list-style-position: inside;
-    margin: 0.5em 1em 1em 1em;
 }
 
 /*
@@ -76,56 +82,50 @@ header {
     padding: 40px 0 20px 0;
     text-align: center;
 }
+
 .main-nav a {
     margin: 0 15px;
     font-size: large;
-    font-weight: normal;
+    font-weight: 400;
 }
+
 main {
     padding: 20px 0 40px 0;
+    text-align: center; /* Center align all content within the main area */
 }
-.profile-section {
-    margin-top: 2em;
-}
-.top-container {
-    display: flex;
-    align-items: stretch; /* CHANGED: From 'center' to 'stretch' to make items same height */
-    gap: 30px;
-    margin-bottom: 30px;
-}
+
 .picture-container {
-    flex-shrink: 0;
-    width: 200px;
-    height: 200px;
+    width: 150px; /* A bit smaller for a centered layout */
+    height: 150px;
+    margin: 20px auto 40px auto; /* Auto on left/right centers it */
 }
+
 .picture-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 8px;
-}
-.description-container {
-    flex-grow: 1;
-    /* CHANGED: Added these lines to vertically center the text inside the stretched container */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    border-radius: 8px; /* The rounded square from before */
 }
 
-/*
-====================================
-4. RESPONSIVE (MOBILE) STYLES
-====================================
-*/
-@media (max-width: 768px) {
-    .top-container {
-        flex-direction: column;
-        align-items: center; /* Revert to center for stacked mobile view */
-    }
-    .picture-container {
-        margin-bottom: 20px;
-    }
-    .main-nav a {
-        margin: 0 10px;
-    }
+.description-block {
+    margin-bottom: 40px;
+}
+
+hr {
+    border: none; /* Remove default line */
+    border-top: 1px dashed rgb(200, 200, 200); /* Style a new dashed line */
+    max-width: 250px; /* Make it shorter than the full width */
+    margin: 40px auto; /* Center it and give it space */
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.final-list {
+    line-height: 1.5;
+    color: rgb(120, 120, 120);
+}
+.final-list p {
+    margin-bottom: 0.2em;
 }
