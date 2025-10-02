@@ -55,3 +55,54 @@ h3 {
   font-weight: normal;
 
 }
+
+/* Styling for the new profile section */
+
+.profile-section {
+    padding: 40px 20px; /* Some space on the top/bottom and sides */
+    max-width: 900px;   /* Maximum width of the section */
+    margin: 0 auto;     /* This centers the section on the page */
+}
+
+.top-container {
+    display: flex;          /* Aligns elements side-by-side */
+    align-items: center;    /* Vertically aligns the picture and text */
+    gap: 30px;              /* Adds space between the picture and the text */
+    margin-bottom: 30px;    /* Space between the top part and the additional text */
+}
+
+.picture-container {
+    flex-shrink: 0;   /* Prevents the image container from shrinking */
+    width: 200px;     /* Sets a fixed width for the picture container */
+    height: 200px;    /* Sets a fixed height to make it a square */
+}
+
+.picture-container img {
+    width: 100%;        /* The image will fill the full width of its container */
+    height: 100%;       /* The image will fill the full height of its container */
+    object-fit: cover;  /* Ensures the image covers the area without being distorted */
+    border-radius: 8px; /* Adds slightly rounded corners (a nice modern touch!) */
+}
+
+.description-container {
+    flex-grow: 1; /* Allows this container to take up all the remaining space */
+}
+
+.additional-text-container {
+    text-align: left; /* Aligns the text to the left */
+}
+
+/* --- Media Query for Mobile Devices --- */
+/* When the screen is 768px wide or less, these rules will apply */
+@media (max-width: 768px) {
+    .top-container {
+        flex-direction: column; /* Stacks the picture and description vertically */
+        text-align: center;     /* Centers the text when they are stacked */
+    }
+
+    .picture-container {
+        margin-bottom: 20px; /* Adds space below the picture in the stacked view */
+    }
+}
+
+
