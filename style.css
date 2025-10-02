@@ -39,8 +39,11 @@ h1 {
     margin-bottom: 20px;
 }
 h2 {
-    color: rgb(160, 160, 160);
-    font-weight: 300;
+    color: rgb(80, 80, 80); /* Darker color for section heading */
+    font-weight: 400; /* Normal weight, as the <strong> tag will make part of it bold */
+    text-align: left;
+    line-height: 1.4;
+    margin-bottom: 1em;
 }
 h3 {
     text-align: center;
@@ -49,22 +52,14 @@ h3 {
 }
 p {
     margin-bottom: 1em;
-}
-.profile-section p {
     text-align: justify;
 }
 a {
     color: rgb(0, 0, 128);
     text-decoration: none;
 }
-a:hover,
-a:active {
+a:hover, a:active {
     text-decoration: underline;
-}
-ul {
-    list-style-type: circle;
-    list-style-position: inside;
-    margin: 0.5em 1em 1em 1em;
 }
 
 /*
@@ -84,15 +79,21 @@ header {
 main {
     padding: 20px 0 40px 0;
 }
-.profile-section {
-    margin-top: 2em;
-}
+
+/* --- Container for both image/text sections --- */
 .top-container {
     display: flex;
-    align-items: stretch; /* Makes items same height */
+    align-items: center;
     gap: 30px;
-    margin-bottom: 30px;
+    margin-top: 20px; /* Space above each section */
+    margin-bottom: 20px; /* Space below each section */
 }
+
+/* --- NEW RULE for the mirrored layout --- */
+.top-container.reverse {
+    flex-direction: row-reverse;
+}
+
 .picture-container {
     flex-shrink: 0;
     width: 200px;
@@ -106,10 +107,13 @@ main {
 }
 .description-container {
     flex-grow: 1;
-    /* Vertically centers the text inside */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+}
+
+/* --- NEW RULE for the separator line --- */
+.section-divider {
+    border: none;
+    border-top: 1px dashed rgb(200, 200, 200);
+    margin: 40px auto;
 }
 
 /*
@@ -118,14 +122,14 @@ main {
 ====================================
 */
 @media (max-width: 768px) {
-    .top-container {
-        flex-direction: column;
-        align-items: center; /* Revert to center for stacked mobile view */
+    .top-container,
+    .top-container.reverse { /* This rule now applies to both normal and reversed containers */
+        flex-direction: column; /* Stack vertically on mobile */
     }
     .picture-container {
         margin-bottom: 20px;
     }
-    .main-nav a {
-        margin: 0 10px;
+    h2 {
+        text-align: center;
     }
 }
