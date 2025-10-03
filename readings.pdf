@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)file:///C:/Users/matteg/Downloads/readings.html -->
+<html lang="it"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letture Essenziali</title>
+    <style>
+        /* Stili generali del documento */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 2cm;
+            color: #333;
+        }
+
+        /* Stile per il titolo principale */
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 2cm;
+            color: #000;
+        }
+
+        /* Stile per la lista numerata delle pubblicazioni */
+        ol {
+            padding-left: 2em; /* Aggiunge un po' di spazio a sinistra per i numeri */
+        }
+
+        /* Stile per ogni elemento della lista (ogni pubblicazione) */
+        li {
+            margin-bottom: 1.5em; /* Aggiunge spazio tra una pubblicazione e l'altra */
+            text-align: justify;
+        }
+
+        /* Il tag <strong> viene usato per il grassetto, non serve uno stile aggiuntivo */
+        strong {
+            font-weight: bold;
+        }
+
+        /* Stile per i link */
+        a {
+            color: #0056b3; /* Colore blu per i link */
+            text-decoration: none; /* Rimuove la sottolineatura dai link */
+        }
+        
+        a:hover {
+            text-decoration: underline; /* Aggiunge la sottolineatura quando passi il mouse sopra */
+        }
+
+        /* Quando si stampa, i link appaiono neri e senza sottolineatura per un look più pulito */
+        @media print {
+            body {
+                margin: 1.5cm;
+            }
+            a {
+                color: #000;
+                text-decoration: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>essential readings:</h1>
+
+    <ol>
+        <li>Hubel, D. H., e T. N. Wiesel. <strong>«Receptive fields of single neurones in the cat’s striate cortex»</strong>. The Journal of Physiology, vol. 148, fasc. 3, ottobre 1959, pp. 574–91. <a href="https://doi.org/10.1113/jphysiol.1959.sp006308">PubMed Central</a>.</li>
+        
+        <li>Hubel, D. H., e T. N. Wiesel. <strong>«Receptive fields, binocular interaction and functional architecture in the cat’s visual cortex»</strong>. The Journal of Physiology, vol. 160, fasc. 1, gennaio 1962, pp. 106-154.2. <a href="https://doi.org/10.1113/jphysiol.1962.sp006837">PubMed Central</a>.</li>
+        
+        <li>O’Keefe, J., e J. Dostrovsky. <strong>«The hippocampus as a spatial map. Preliminary evidence from unit activity in the freely-moving rat»</strong>. Brain Research, vol. 34, fasc. 1, novembre 1971, pp. 171–75. <a href="https://doi.org/10.1016/0006-8993(71)90358-1">ScienceDirect</a>.</li>
+        
+        <li><strong>«How Patterned Neural Connections Can Be Set up by Self-Organization»</strong>. Proceedings of the Royal Society of London. Series B. Biological Sciences, vol. 194, fasc. 1117, novembre 1976, pp. 431–45. <a href="https://doi.org/10.1098/rspb.1976.0087">DOI.org (Crossref)</a>.</li>
+        
+        <li>Galli, Lucia, e Lamberto Maffei. <strong>«Spontaneous Impulse Activity of Rat Retinal Ganglion Cells in Prenatal Life»</strong>. Science, vol. 242, fasc. 4875, ottobre 1988, pp. 90–91. <a href="https://doi.org/10.1126/science.3175637">DOI.org (Crossref)</a>.</li>
+        
+        <li>Taube, J. S., et al. <strong>«Head-Direction Cells Recorded from the Postsubiculum in Freely Moving Rats. I. Description and Quantitative Analysis»</strong>. The Journal of Neuroscience: The Official Journal of the Society for Neuroscience, vol. 10, fasc. 2, febbraio 1990, pp. 420–35. <a href="https://doi.org/10.1523/JNEUROSCI.10-02-00420.1990">PubMed</a>.</li>
+        
+        <li>Yuste, Rafael, et al. <strong>«Neuronal Domains in Developing Neocortex»</strong>. Science, vol. 257, fasc. 5070, luglio 1992, pp. 665–69. <a href="https://doi.org/10.1126/science.1496379">DOI.org (Crossref)</a>.</li>
+        
+        <li>O’Keefe, John, e Michael L. Recce. <strong>«Phase Relationship between Hippocampal Place Units and the EEG Theta Rhythm»</strong>. Hippocampus, vol. 3, fasc. 3, luglio 1993, pp. 317–30. <a href="https://doi.org/10.1002/hipo.450030307">DOI.org (Crossref)</a>.</li>
+        
+        <li>Skaggs, William E., et al. <strong>«Theta Phase Precession in Hippocampal Neuronal Populations and the Compression of Temporal Sequences»</strong>. Hippocampus, vol. 6, fasc. 2, 1996, pp. 149–72. <a href="https://doi.org/10.1002/(SICI)1098-1063(1996)6:2%3C149::AID-HIPO6%3E3.0.CO;2-K">DOI.org (Crossref)</a>.</li>
+        
+        <li>Buzsáki, György. <strong>«Large-Scale Recording of Neuronal Ensembles»</strong>. Nature Neuroscience, vol. 7, fasc. 5, maggio 2004, pp. 446–51. <a href="https://doi.org/10.1038/nn1233">www.nature.com</a>.</li>
+        
+        <li>Khazipov, Rustem, et al. <strong>«Early Motor Activity Drives Spindle Bursts in the Developing Somatosensory Cortex»</strong>. Nature, vol. 432, fasc. 7018, dicembre 2004, pp. 758–61. <a href="https://doi.org/10.1038/nature03132">DOI.org (Crossref)</a>.</li>
+        
+        <li>Hafting, Torkel, et al. <strong>«Microstructure of a Spatial Map in the Entorhinal Cortex»</strong>. Nature, vol. 436, fasc. 7052, agosto 2005, pp. 801–06. <a href="https://doi.org/10.1038/nature03721">www.nature.com</a>.</li>
+        
+        <li>McNaughton, Bruce L., et al. <strong>«Path Integration and the Neural Basis of the “Cognitive Map”»</strong>. Nature Reviews Neuroscience, vol. 7, fasc. 8, agosto 2006, pp. 663–78. <a href="https://doi.org/10.1038/nrn1932">www.nature.com</a>.</li>
+        
+        <li>Burn, Charlotte C. <strong>«What is it like to be a rat? Rat sensory perception and its implications for experimental design and rat welfare»</strong>. Applied Animal Behaviour Science, vol. 112, fasc. 1, luglio 2008, pp. 1–32. <a href="https://doi.org/10.1016/j.applanim.2008.02.007">ScienceDirect</a>.</li>
+        
+        <li>Klausberger, Thomas, e Peter Somogyi. <strong>«Neuronal Diversity and Temporal Dynamics: The Unity of Hippocampal Circuit Operations»</strong>. Science, vol. 321, fasc. 5885, luglio 2008, pp. 53–57. <a href="https://doi.org/10.1126/science.1149381">DOI.org (Crossref)</a>.</li>
+        
+        <li>Pastalkova, Eva, et al. <strong>«Internally Generated Cell Assembly Sequences in the Rat Hippocampus»</strong>. Science, vol. 321, fasc. 5894, settembre 2008, pp. 1322–27. <a href="https://doi.org/10.1126/science.1159775">DOI.org (Crossref)</a>.</li>
+        
+        <li>Langston, Rosamund F., et al. <strong>«Development of the Spatial Representation System in the Rat»</strong>. Science, vol. 328, fasc. 5985, giugno 2010, pp. 1576–80. <a href="https://doi.org/10.1126/science.1188210">DOI.org (Crossref)</a>.</li>
+        
+        <li>Wills, Tom J., et al. <strong>«Development of the Hippocampal Cognitive Map in Preweanling Rats»</strong>. Science, vol. 328, fasc. 5985, giugno 2010, pp. 1573–76. <a href="https://doi.org/10.1126/science.1188224">DOI.org (Crossref)</a>.</li>
+        
+        <li>Isaacson, Jeffry S., e Massimo Scanziani. <strong>«How Inhibition Shapes Cortical Activity»</strong>. Neuron, vol. 72, fasc. 2, ottobre 2011, pp. 231–43. <a href="https://doi.org/10.1016/j.neuron.2011.09.027">ScienceDirect</a>.</li>
+        
+        <li>Peyrache, Adrien, et al. <strong>«Internally Organized Mechanisms of the Head Direction Sense»</strong>. Nature Neuroscience, vol. 18, fasc. 4, aprile 2015, pp. 569–75. <a href="https://doi.org/10.1038/nn.3968">www.nature.com</a>.</li>
+        
+        <li>Bittner, Katie C., Christine Grienberger, et al. <strong>«Conjunctive Input Processing Drives Feature Selectivity in Hippocampal CA1 Neurons»</strong>. Nature Neuroscience, vol. 18, fasc. 8, agosto 2015, pp. 1133–42. <a href="https://doi.org/10.1038/nn.4062">www.nature.com</a>.</li>
+        
+        <li>Kim, Sung Soo, et al. <strong>«Ring Attractor Dynamics in the Drosophila Central Brain»</strong>. Science, vol. 356, fasc. 6340, maggio 2017, pp. 849–53. <a href="https://doi.org/10.1126/science.aal4835">DOI.org (Crossref)</a>.</li>
+        
+        <li>Bittner, Katie C., Aaron D. Milstein, et al. <strong>«Behavioral Time Scale Synaptic Plasticity Underlies CA1 Place Fields»</strong>. Science, vol. 357, fasc. 6355, settembre 2017, pp. 1033–36. <a href="https://doi.org/10.1126/science.aan3846">DOI.org (Crossref)</a>.</li>
+        
+        <li>Tingley, David, et al. <strong>«A Metabolic Function of the Hippocampal Sharp Wave-Ripple»</strong>. Nature, vol. 597, fasc. 7874, settembre 2021, pp. 82–86. <a href="https://doi.org/10.1038/s41586-021-03811-w">www.nature.com</a>.</li>
+        
+        <li>Munz, Martin, et al. <strong>«Pyramidal Neurons Form Active, Transient, Multilayered Circuits Perturbed by Autism-Associated Mutations at the Inception of Neocortex»</strong>. Cell, vol. 186, fasc. 9, aprile 2023, pp. 1930-1949.e31. <a href="https://doi.org/10.1016/j.cell.2023.03.025">DOI.org (Crossref)</a>.</li>
+        
+        <li>Langdon, Christopher, et al. <strong>«A Unifying Perspective on Neural Manifolds and Circuits for Cognition»</strong>. Nature Reviews Neuroscience, vol. 24, fasc. 6, giugno 2023, pp. 363–77. <a href="https://doi.org/10.1038/s41583-023-00693-x">www.nature.com</a>.</li>
+
+        <li>Vollan, Abraham Z., et al. <strong>«Left–Right-Alternating Theta Sweeps in Entorhinal–Hippocampal Maps of Space»</strong>. Nature, vol. 639, fasc. 8056, marzo 2025, pp. 995–1005. <a href="https://doi.org/10.1038/s41586-024-08527-1">www.nature.com</a>.</li>
+    </ol>
+
+
+</body></html>
