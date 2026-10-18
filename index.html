@@ -3,11 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- SEO: Explicit Title and Meta Description -->
-    <title>Matteo Guardamagna — Postdoctoral Fellow | Kavli Institute</title>
-    <meta name="description" content="Personal academic website of Matteo Guardamagna, Postdoctoral Fellow in the Moser Group at the Kavli Institute for Systems Neuroscience, studying spatial navigation and neural circuits.">
-    
+    <title>Matteo Guardamagna — Developmental Algorithms for Natural Behaviors</title>
+    <meta name="description" content="Matteo Guardamagna, Postdoctoral Fellow in the Moser Group at the Kavli Institute for Systems Neuroscience (NTNU). Developmental algorithms for natural behaviors: how neural computations emerge from developing circuits.">
+    <link rel="canonical" href="https://matteoguardamagna.github.io/">
+    <meta name="author" content="Matteo Guardamagna">
+    <meta name="color-scheme" content="light dark">
+
+    <!-- Social sharing -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Matteo Guardamagna — Developmental Algorithms for Natural Behaviors">
+    <meta property="og:description" content="How neural computations emerge from developing circuits, are calibrated by the developing body and become anchored to the world.">
+    <meta property="og:url" content="https://matteoguardamagna.github.io/">
+    <meta property="og:image" content="https://matteoguardamagna.github.io/images/profile-pic.png">
+    <meta name="twitter:card" content="summary">
+
     <!-- SEO: JSON-LD Structured Data to help Google link your name to your profile -->
     <script type="application/ld+json">
     {
@@ -21,22 +32,29 @@
         "@type": "Organization",
         "name": "Kavli Institute for Systems Neuroscience, NTNU"
       },
+      "knowsAbout": ["Developmental neuroscience", "Neural manifolds", "Grid cells", "Spatial navigation", "Thalamocortical circuits"],
       "sameAs": [
         "https://scholar.google.com/citations?user=wGGPUeEAAAAJ",
+        "https://github.com/MatteoGuardamagna",
         "https://bsky.app/profile/matteoguardamagna.bsky.social"
       ]
     }
     </script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='16' rx='13' ry='8' fill='none' stroke='%231f2f8f' stroke-width='3'/%3E%3Ccircle cx='27' cy='17' r='3.5' fill='%23e0643b'/%3E%3C/svg%3E">
 </head>
 
 <body>
 
-    <header>
-        <div class="container">
-            <h1 itemprop="name"><strong>Matteo Guardamagna</strong></h1>
-            <nav class="main-nav">
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="wordmark" href="#top">Matteo Guardamagna</a>
+            <nav class="main-nav" aria-label="Main">
+                <a href="#research">research</a>
                 <a href="CV_MatteoGuardamagna.pdf">cv</a>
                 <a href="https://scholar.google.com/citations?user=wGGPUeEAAAAJ">publications</a>
                 <a href="https://bsky.app/profile/matteoguardamagna.bsky.social">bluesky</a>
@@ -44,55 +62,174 @@
         </div>
     </header>
 
-    <main>
-        <!-- Adding item-prop tags to further reinforce schema.org microdata -->
-        <div class="container" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="url" content="https://matteoguardamagna.github.io/">
+    <main id="top" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="url" content="https://matteoguardamagna.github.io/">
 
-            <section class="bio-section">
-                <div class="top-container">
-                    <div class="picture-container">
-                        <img itemprop="image" src="images/profile-pic.png" alt="A photo of Matteo Guardamagna">
-                    </div>
-                    <div class="description-container">
-                        <h2>About me:</h2>
-                        <p>
-                            I am a <strong itemprop="jobTitle">Postdoctoral Fellow</strong> in the <a href="https://www.ntnu.edu/kavli/moser-group#/view/about" itemprop="worksFor" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">Moser Group</span></a> at the Kavli Institute for Systems Neuroscience.<br>
-            
-                            I am currently investigating the <em>ontogeny</em> of our sense of space, with a focus on the developmental timeline and the neural circuit implementations of toroidal and ring manifolds in mEC. <br> 
-                            During my PhD I developed new <a href="https://iopscience.iop.org/article/10.1088/1741-2552/ac6771/meta">implant systems</a> for mice and studied the spatial and temporal code of CA1 place cells <a href="https://www.cell.com/cell-reports/fulltext/S2211-1247(23)00033-5">1</a>;<a href="https://www.nature.com/articles/s41467-025-61453-2">2</a>.
-                            <br><br>
-                            Passions on the side: poetry, history, cooking & foraging, and the mediterranean sea. <a href="https://www.youtube.com/watch?v=WRS9Gek4V5Q">||</a>
+        <!-- ABOUT -->
+        <section id="about" class="about">
+            <div class="container about-grid">
+                <div class="about-text">
+                    <p class="eyebrow">About me</p>
+                    <h1 itemprop="name">Matteo Guardamagna</h1>
+                    <p>
+                        I am a <strong itemprop="jobTitle">Postdoctoral Fellow</strong> in the
+                        <a href="https://www.ntnu.edu/kavli/moser-group#/view/about" itemprop="worksFor" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">Moser Group</span></a>
+                        at the Kavli Institute for Systems Neuroscience in Trondheim, where I study the <em>ontogeny</em>
+                        of our sense of space.
+                    </p>
+                    <p>
+                        During my PhD I developed new <a href="https://iopscience.iop.org/article/10.1088/1741-2552/ac6771/meta">implant systems</a>
+                        for mice (<a href="https://github.com/MatteoGuardamagna/Hybrid_drive">open hardware on GitHub</a>)
+                        and studied the spatial and temporal code of CA1 place cells
+                        <a href="https://www.cell.com/cell-reports/fulltext/S2211-1247(23)00033-5">1</a>;<a href="https://www.nature.com/articles/s41467-025-61453-2">2</a>.
+                    </p>
+                    <p class="aside">
+                        Passions on the side: poetry, history, cooking &amp; foraging, and the Mediterranean sea.
+                        <a href="https://www.youtube.com/watch?v=WRS9Gek4V5Q" aria-label="A song">||</a>
+                    </p>
+                </div>
+                <div class="portrait">
+                    <img itemprop="image" src="images/profile-pic.png" alt="Matteo Guardamagna giving a talk" width="1102" height="1362">
+                </div>
+            </div>
+        </section>
+
+        <!-- RESEARCH -->
+        <section id="research" class="section section-alt">
+            <div class="container">
+                <div class="research-grid">
+                    <div class="research-head">
+                        <h2 class="display">Developmental Algorithms for Natural Behaviors</h2>
+                        <p class="lede">
+                            My work aims to identify the developmental algorithms by which neural computations emerge
+                            from developing circuits, establish how they are calibrated by the developing body and brain
+                            states, and determine how they become anchored to the world and the ecological niche in which
+                            animals develop.
                         </p>
                     </div>
+
+                    <figure class="manifold-figure">
+                        <canvas id="hero-manifold" class="manifold" role="img"
+                                aria-label="Animation: a structureless cloud of flickering points, standing for neural activity, organises into an S-shaped line, closes into a ring and inflates into a torus, while a bright bump of activity travels across it."></canvas>
+                        <figcaption>
+                            <ol class="stages" aria-hidden="true">
+                                <li data-stage="0">structureless clouds</li>
+                                <li data-stage="1">line</li>
+                                <li data-stage="2">ring</li>
+                                <li data-stage="3">torus</li>
+                            </ol>
+                            <span class="figure-label">neural manifolds</span>
+                        </figcaption>
+                    </figure>
                 </div>
-            </section>
-            <hr class="section-divider">
 
+                <div class="program">
+                    <p class="program-intro">
+                        Studying population dynamics in development, linking neural computation to behavior beyond the
+                        level of single cells.
+                    </p>
+                    <p>
+                        Neural circuits are not born computing.
+                        Yet from the earliest days of postnatal life developing animals already produce a rich repertoire
+                        of behaviors. We still lack an account of the population-level computations that developing circuits
+                        perform, and of how they support early behavior. How does a brain with immature circuitry, a rapidly
+                        changing body and an initially unfamiliar world come to generate the neural dynamics that support
+                        natural behavior, and how does that emerging behavior, in turn, shape the circuits?
+                    </p>
+                    <p>
+                        My laboratory will address these questions by combining high-density electrophysiology in the nest,
+                        where animals naturally develop, with 3D reconstruction of behavior and physiological state,
+                        computational analysis of population geometry and cell-type-specific genetic manipulations.
+                    </p>
+                </div>
 
-            <section class="aims-section">
-                <div class="top-container reverse">
-                    <div class="picture-container">
-                        <img src="images/TorusArt.png" alt="A torus representing neural manifolds">
-                    </div>
-                    
-                    <div class="research-container">
-                            <h2 style="text-align: right; align-self: flex-end;">About my research</h2>
-                        <i>"Cognition is not the representation of a pre-given world by a pre-given mind but is rather the enaction of a world and a mind."</i> — Varela et al. (1991)<br><br>
-                        How do developing brains learn to coordinate sensation and movement to generate increasingly adaptive behaviors?<br><br>
-                        Neural circuits are not born computing. Animals learn about the world by moving through it: the body generates the very first experiences the brain needs to calibrate and anchor its internally generated activity.
-                        I study how this unfolds in thalamocortical circuits, starting from the brain's spatial navigation system, by following the geometry of neural population activity, the neural manifold, as it takes shape during early postnatal development. My research asks three questions:<br><br>
-                        <b>Formation</b>: how does structured population activity emerge from developing circuitry, before it is tied to behavior?<br>
-                        <b>Calibration</b>: how does it acquire its dynamics, using the body's own movements, including the twitches of sleep, as a teaching signal?<br>
-                        <b>Anchoring</b>: how does it become referenced to the external world as the senses come online?<br><br>
-                        To answer them, I combine (i) chronic high-density recordings of neural populations across behavior and sleep, (ii) analysis of population geometry and dynamics, and (iii) detailed 3D decomposition of behavior.
-                        My long-term goal is to carry these principles beyond this specific circuit, toward a general theory of how the manifolds underlying sensory, motor, and cognitive computation are built by developing brains
+                <ol class="steps">
+                    <li>
+                        <span class="step-num">01</span>
+                        <h3>Formation</h3>
+                        <p>How does population geometry emerge from developing circuitry?</p>
+                    </li>
+                    <li>
+                        <span class="step-num">02</span>
+                        <h3>Calibration</h3>
+                        <p>How does it acquire its dynamics from a developing body?</p>
+                    </li>
+                    <li>
+                        <span class="step-num">03</span>
+                        <h3>Anchoring</h3>
+                        <p>How does it become referenced to the animal’s world and ecological niche?</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- SELECTED WORK -->
+        <section id="work" class="section">
+            <div class="container">
+                <div class="section-head">
+                    <p class="eyebrow">Selected work</p>
+                    <h2>Papers</h2>
+                </div>
+                <ul class="paper-list">
+                    <li>
+                        <span class="paper-year">2026</span>
+                        <div>
+                            <a class="paper-title" href="https://doi.org/10.64898/2026.07.02.736055">The emergence of a novel CA1 spatial map requires direct entorhinal input</a>
+                            <span class="paper-authors">Chadney OMT, <b>Guardamagna M</b>, Dörr F, Descamps LAL, Stella F, Battaglia FP, Kentros CG</span>
+                            <span class="paper-venue">bioRxiv</span>
                         </div>
-                    </div>
-            </section>                        
-  
-    </div>
+                    </li>
+                    <li>
+                        <span class="paper-year">2026</span>
+                        <div>
+                            <a class="paper-title" href="https://doi.org/10.64898/2026.03.10.710908">Toroidal topology of grid-cell activity precedes spatial navigation during development</a>
+                            <span class="paper-authors"><b>Guardamagna M</b>, Hermansen E, Carpenter J, Lykken CM, Dunn BA, Moser EI, Moser M-B</span>
+                            <span class="paper-venue">bioRxiv</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="paper-year">2025</span>
+                        <div>
+                            <a class="paper-title" href="https://www.nature.com/articles/s41467-025-61453-2">Direct entorhinal control of CA1 temporal coding</a>
+                            <span class="paper-authors"><b>Guardamagna M</b>, Chadney O, Stella F, Zhang Q, Kentros C, Battaglia FP</span>
+                            <span class="paper-venue">Nature Communications</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="paper-year">2023</span>
+                        <div>
+                            <a class="paper-title" href="https://www.cell.com/cell-reports/fulltext/S2211-1247(23)00033-5">Heterogeneity of network and coding states in mouse CA1 place cells</a>
+                            <span class="paper-authors"><b>Guardamagna M</b>, Stella F, Battaglia FP</span>
+                            <span class="paper-venue">Cell Reports</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="paper-year">2022</span>
+                        <div>
+                            <a class="paper-title" href="https://iopscience.iop.org/article/10.1088/1741-2552/ac6771/meta">The Hybrid Drive: a chronic implant device combining tetrode arrays with silicon probes for layer-resolved ensemble electrophysiology in freely moving mice</a>
+                            <span class="paper-authors"><b>Guardamagna M</b>, Eichler R, Pedrosa R, Aarts A, Meyer AF, Battaglia FP</span>
+                            <span class="paper-venue">Journal of Neural Engineering · <a href="https://github.com/MatteoGuardamagna/Hybrid_drive">code &amp; designs</a></span>
+                        </div>
+                    </li>
+                </ul>
+                <p class="more-link"><a href="https://scholar.google.com/citations?user=wGGPUeEAAAAJ">All publications on Google Scholar →</a></p>
+            </div>
+        </section>
     </main>
 
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>Matteo Guardamagna · Kavli Institute for Systems Neuroscience, NTNU · Trondheim</p>
+            <nav class="footer-links" aria-label="Elsewhere">
+                <a href="mailto:matteo.guardamagna@ntnu.no">email</a>
+                <a href="CV_MatteoGuardamagna.pdf">cv</a>
+                <a href="https://scholar.google.com/citations?user=wGGPUeEAAAAJ">scholar</a>
+                <a href="https://github.com/MatteoGuardamagna">github</a>
+                <a href="https://bsky.app/profile/matteoguardamagna.bsky.social">bluesky</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="js/manifolds.js" defer></script>
 </body>
 </html>

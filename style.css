@@ -1,27 +1,84 @@
 /*
 ====================================
-1. FONT IMPORT & GLOBAL STYLES
+1. TOKENS & GLOBAL STYLES
 ====================================
 */
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Raleway:wght@300;400;700&display=swap');
-* {
+:root {
+    --bg: #f7f5f0;
+    --bg-alt: #efece4;
+    --surface: #ffffff;
+    --ink: #15203a;
+    --ink-2: #47506a;
+    --ink-3: #7a8296;
+    --line: #dedad0;
+    --link: #1f2f8f;          /* the navy of the original site */
+    --accent: #d9572b;        /* the travelling bump */
+    --point: #15203a;         /* manifold points */
+
+    --serif: 'Newsreader', 'Iowan Old Style', Georgia, serif;
+    --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace;
+
+    --measure: 42rem;
+    --radius: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --bg: #0c111d;
+        --bg-alt: #111829;
+        --surface: #151d31;
+        --ink: #e9ecf4;
+        --ink-2: #b0b8cb;
+        --ink-3: #7f899f;
+        --line: #252f47;
+        --link: #a9b8ff;
+        --accent: #ff8458;
+        --point: #dfe5f5;
+    }
+}
+:root[data-theme="dark"] {
+    --bg: #0c111d;
+    --bg-alt: #111829;
+    --surface: #151d31;
+    --ink: #e9ecf4;
+    --ink-2: #b0b8cb;
+    --ink-3: #7f899f;
+    --line: #252f47;
+    --link: #a9b8ff;
+    --accent: #ff8458;
+    --point: #dfe5f5;
+}
+
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-body {
-    background-color: white;
-    font-family: 'Raleway', serif;
-    font-weight: 400;
-    font-size: large;
-    color: rgb(100, 100, 100);
-    line-height: 1.6;
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
 }
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--ink-2);
+    font-family: var(--sans);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+}
+
 .container {
-    max-width: 60em;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 20px;
+    max-width: 70rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
 /*
@@ -30,172 +87,396 @@ body {
 ====================================
 */
 h1, h2, h3 {
-    font-family: 'Raleway', serif;
+    font-family: var(--serif);
+    color: var(--ink);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
 }
 h1 {
-    color: rgb(0, 0, 128);
-    font-weight: 400;
-    text-align: center;
-    margin-bottom: 20px;
+    font-size: clamp(2.3rem, 4.6vw, 3.5rem);
+    margin-bottom: 1.5rem;
 }
-
 h2 {
-    color: rgb(80, 80, 80);
-    font-weight: 700;
-    text-align: left;
-    line-height: 1.4;
-    margin-bottom: 1em;
-    font-size: 1.2em;
+    font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+    text-wrap: balance;
 }
-
 h3 {
-    text-align: center;
-    font-size: large;
-    font-weight: 400;
+    font-size: 1.45rem;
+    margin-bottom: 0.4rem;
+}
+.display {
+    font-size: clamp(2.3rem, 4.8vw, 3.9rem);
+    margin-bottom: 1.5rem;
 }
 p {
     margin-bottom: 1em;
-    text-align: justify;
-    font-size: 1em;
 }
 a {
-    color: rgb(0, 0, 128);
+    color: var(--link);
     text-decoration: none;
+    text-underline-offset: 0.18em;
 }
-a:hover, a:active {
+a:hover,
+a:focus-visible {
     text-decoration: underline;
 }
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+em {
+    font-style: italic;
+}
+
+.eyebrow {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.9rem;
+}
 
 /*
 ====================================
-3. LAYOUT & COMPONENTS
+3. HEADER
 ====================================
 */
-header {
-    padding: 40px 0 20px 0;
-    text-align: center;
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+}
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 3.75rem;
+}
+.wordmark {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    color: var(--ink);
+    white-space: nowrap;
+}
+.wordmark:hover { text-decoration: none; }
+.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.4rem;
+    font-size: 0.95rem;
 }
 .main-nav a {
-    margin: 0 15px;
-    font-size: large;
-    font-weight: normal;
+    color: var(--ink-2);
 }
-main {
-    padding: 20px 0 40px 0;
+.main-nav a:hover {
+    color: var(--link);
 }
 
-.top-container {
-    display: flex;
-    align-items: stretch; 
-    gap: 30px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+/*
+====================================
+4. ABOUT (top of page)
+====================================
+*/
+.about {
+    padding: clamp(2rem, 5vw, 3.5rem) 0 clamp(2rem, 4vw, 3rem);
 }
-.top-container.reverse {
-    flex-direction: row-reverse;
+.about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 18rem);
+    gap: clamp(1.5rem, 5vw, 4.5rem);
+    align-items: center;
 }
-
-.picture-container {
-    flex-shrink: 0;
-    width: 200px;
+.about-text p {
+    font-size: 1.1rem;
 }
-.picture-container img {
+.about-text .aside {
+    color: var(--ink-3);
+    font-size: 0.98rem;
+}
+.portrait img {
+    display: block;
     width: 100%;
-    height: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
     object-fit: cover;
-    border-radius: 8px;
-}
-.description-container {
-    flex-grow: 1;
-}
-
-.aims-section .description-container {
-    text-align: right;
-}
-.aims-section p {
-    text-align: right;
-}
-
-/* --- NEW RULE ADDED --- This specifically targets the 2nd title */
-.aims-section h2 {
-    text-align: right;
-}
-
-.section-divider {
-    border: none;
-    border-top: 1px dashed rgb(200, 200, 200);
-    margin: 40px auto;
+    object-position: 30% 10%;
+    border-radius: var(--radius);
 }
 
 /*
 ====================================
-4. RESPONSIVE (MOBILE) STYLES
+5. SECTIONS
 ====================================
 */
-@media (max-width: 768px) {
-    .top-container,
-    .top-container.reverse {
-        flex-direction: column;
-    }
-    .picture-container {
-        width: 100%; 
-        max-width: 300px;
-        margin-bottom: 20px;
-    }
-    .description-container, h2, p {
-        text-align: center !important;
-    }
+.section {
+    padding: clamp(2rem, 5vw, 3.5rem) 0;
+    border-top: 1px solid var(--line);
+}
+.section-alt {
+    background: var(--bg-alt);
+}
+.section-head {
+    max-width: var(--measure);
+    margin-bottom: 1.75rem;
 }
 
-
-
-/*
-====================================
-5. INSPIRATIONS PAGE STYLES
-====================================
-*/
-
-.page-title {
-    text-align: center;
-    margin: 20px 0 40px 0;
+/* Research: title, lede and the manifold animation */
+.research-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 4rem);
+    align-items: center;
+}
+.lede {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 34rem;
+    margin: 0;
 }
 
+canvas.manifold {
+    display: block;
+    width: 100%;
+    touch-action: pan-y;
+    cursor: grab;
+}
+canvas.manifold:active {
+    cursor: grabbing;
+}
+#hero-manifold {
+    aspect-ratio: 5 / 4;
+    max-height: 28rem;
+}
+.manifold-figure figcaption {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem 1rem;
+    margin-top: 0.5rem;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--ink-3);
+}
+.stages {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+.stages li {
+    padding: 0.15rem 0.6rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    transition: color 0.4s, border-color 0.4s;
+}
+.stages li.active {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+.figure-label {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* Research program text: spans the full width, like the cards below it */
+.program {
+    margin-top: clamp(1.5rem, 3vw, 2.25rem);
+}
+.program p {
+    font-size: 1.1rem;
+}
+.program .program-intro {
+    color: var(--ink);
+}
+
+/* Formation / Calibration / Anchoring */
+.steps {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.75rem;
+}
+.steps li {
+    position: relative;
+    padding: 1.6rem 1.5rem 1.4rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+.steps li:not(:last-child)::after {
+    content: "→";
+    position: absolute;
+    right: -1.05rem;
+    top: 1.55rem;
+    z-index: 1;
+    color: var(--ink-3);
+    font-size: 1rem;
+}
+.step-num {
+    display: block;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+}
+.steps p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Papers */
 .paper-list {
     list-style: none;
-    padding: 0;
+    max-width: 52rem;
 }
-
 .paper-list li {
-    margin-bottom: 3em;
-    padding-bottom: 1.5em;
-    border-bottom: 1px dashed rgb(220, 220, 220);
-    text-align: left;
+    display: grid;
+    grid-template-columns: 4rem minmax(0, 1fr);
+    gap: 1rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--line);
 }
-
 .paper-list li:last-child {
-    border-bottom: none;
+    border-bottom: 1px solid var(--line);
 }
-
-.paper-citation {
-    font-size: 1em;
-    line-height: 1.5;
-    margin-bottom: 0.5em;
-    color: #555;
+.paper-year {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    color: var(--ink-3);
+    padding-top: 0.2rem;
 }
-
-.paper-citation a {
-    font-size: 1.1em;
-    font-weight: 700;
-    color: #000080; /* Navy blue from your main theme */
+.paper-title {
+    display: block;
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    line-height: 1.35;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
 }
-
-.paper-note {
-    font-size: 1em;
-    text-align: justify;
-    color: #333;
+.paper-authors,
+.paper-venue {
+    display: block;
+    font-size: 0.92rem;
+}
+.paper-authors b {
+    color: var(--ink);
+    font-weight: 600;
+}
+.paper-venue {
+    color: var(--ink-3);
     font-style: italic;
-    border-left: 3px solid #eee;
-    padding-left: 1em;
-    margin-top: 1em;
+}
+.paper-venue a {
+    font-style: normal;
+}
+.more-link {
+    margin-top: 1.5rem;
+    font-weight: 500;
 }
 
+/*
+====================================
+6. FOOTER
+====================================
+*/
+.site-footer {
+    border-top: 1px solid var(--line);
+    padding: 2rem 0 2.5rem;
+    font-size: 0.9rem;
+    color: var(--ink-3);
+}
+.footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.75rem 2rem;
+}
+.footer-inner p {
+    margin: 0;
+}
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.25rem;
+}
+
+/*
+====================================
+7. RESPONSIVE
+====================================
+*/
+@media (max-width: 900px) {
+    .research-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .manifold-figure {
+        max-width: 32rem;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .steps {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .steps li:not(:last-child)::after {
+        content: "↓";
+        right: auto;
+        left: 1.5rem;
+        top: auto;
+        bottom: -1.15rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 0 1rem;
+    }
+    body {
+        font-size: 1rem;
+    }
+    .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+        padding-top: 0.6rem;
+        padding-bottom: 0.6rem;
+    }
+    .main-nav {
+        gap: 0.15rem 1rem;
+        font-size: 0.9rem;
+    }
+    .site-header {
+        position: static;
+    }
+    .about-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .portrait {
+        order: -1;
+        max-width: 14rem;
+    }
+    .about-text p,
+    .lede,
+    .program p {
+        font-size: 1.05rem;
+    }
+    .manifold-figure figcaption {
+        font-size: 0.7rem;
+    }
+    .stages li {
+        padding: 0.15rem 0.45rem;
+    }
+    .paper-list li {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.25rem;
+    }
+}
