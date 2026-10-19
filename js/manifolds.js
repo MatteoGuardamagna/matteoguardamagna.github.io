@@ -2,10 +2,10 @@
  * Neural manifold animation.
  *
  * A cloud of points (possible population states) with a bump of activity
- * travelling across it. The cloud starts structureless, condenses onto an
- * S-shaped line, curls shut into a ring and inflates into a torus.
- * All shapes are a tube around one curve whose curvature is blended from an
- * S (two opposite bends) to a constant (a closed ring); a fat tube on the ring
+ * travelling across it. The cloud starts structureless, condenses onto a
+ * gently bent line, curls shut into a ring and inflates into a torus.
+ * All shapes are a tube around one curve whose curvature is blended from a
+ * single bend (the line) to a constant (a closed ring); a fat tube on the ring
  * is the torus.
  *
  * No dependencies. Respects prefers-reduced-motion and only draws while visible.
@@ -16,7 +16,9 @@
     var TAU = Math.PI * 2;
     var THIN = 0.07;   // tube radius of the line and the ring
     var FAT = 0.46;    // tube radius of the torus (ring radius is 1)
-    var S_BEND = 1.2;  // curvature of each lobe of the S (each lobe turns ~200°)
+    var LINE_TURN = 1.45;  // total bend of the line attractor (radians)
+    var LINE_AT = -0.5;    // where the bend sits along the line (upper middle)
+    var LINE_SPREAD = 0.7; // how gradual the bend is
     var SIGMA_U = 0.04, SIGMA_V = 0.09;   // width of the activity bump
     var BUCKETS = 6;   // depth shading levels
     var TRAIL = 28;
@@ -60,29 +62,36 @@
     // The centre curve, sampled at N points: position (CX, CZ) and heading CT.
     var CX = new Float32Array(N), CZ = new Float32Array(N), CT = new Float32Array(N);
 
-    // Curvature at arc length s in [-π, π]: an S blended toward a unit ring.
+    var THETA0 = 0;   // starting heading; set below so the line runs top to bottom
+
+    // Curvature at arc length s in [-π, π]: a line with one gentle bend,
+    // blended toward a constant (a closed unit ring).
     function curvature(s, bend) {
-        return (1 - bend) * S_BEND * Math.tanh(s / 0.35) + bend;
+        var d = (s - LINE_AT) / LINE_SPREAD;
+        var line = LINE_TURN / (LINE_SPREAD * Math.sqrt(TAU)) * Math.exp(-0.5 * d * d);
+        return (1 - bend) * line + bend;
     }
 
     // Integrates the curve for a given bend and returns its radius around the centre.
     function buildCurve(bend) {
-        var ds = TAU / (N - 1), mid = (N - 1) / 2, i;
-        CT[0] = 0;
+        var ds = TAU / (N - 1), i;
+        CT[0] = THETA0;
         for (i = 1; i < N; i++) {
             var s = -Math.PI + i * ds;
             CT[i] = CT[i - 1] + 0.5 * (curvature(s - ds, bend) + curvature(s, bend)) * ds;
         }
-        var shift = -CT[mid];   // the middle stroke runs left to right, so the S stands upright
-        for (i = 0; i < N; i++) CT[i] += shift;
         CX[0] = 0; CZ[0] = 0;
         for (i = 1; i < N; i++) {
             CX[i] = CX[i - 1] + 0.5 * (Math.cos(CT[i - 1]) + Math.cos(CT[i])) * ds;
             CZ[i] = CZ[i - 1] + 0.5 * (Math.sin(CT[i - 1]) + Math.sin(CT[i])) * ds;
         }
-        var mx = 0, mz = 0;
-        for (i = 0; i < N - 1; i++) { mx += CX[i]; mz += CZ[i]; }
-        mx /= N - 1; mz /= N - 1;
+        // Centre on the bounding box so a lopsided line keeps equal margins.
+        var x0 = Infinity, x1 = -Infinity, z0 = Infinity, z1 = -Infinity;
+        for (i = 0; i < N; i++) {
+            x0 = Math.min(x0, CX[i]); x1 = Math.max(x1, CX[i]);
+            z0 = Math.min(z0, CZ[i]); z1 = Math.max(z1, CZ[i]);
+        }
+        var mx = (x0 + x1) / 2, mz = (z0 + z1) / 2;
         var r = 0;
         for (i = 0; i < N; i++) {
             CX[i] -= mx; CZ[i] -= mz;
@@ -90,6 +99,11 @@
         }
         return r;
     }
+
+    // Turn the straight-ish line so its ends sit one above the other on screen
+    // (+z is down), bowing out to the right.
+    buildCurve(0);
+    THETA0 = Math.PI / 2 - Math.atan2(CZ[N - 1] - CZ[0], CX[N - 1] - CX[0]);
 
     // Point (u, v) on a tube of radius `tube` around the current curve.
     function shape(u, v, tube, out) {
@@ -111,18 +125,19 @@
     }
 
     // ---------- timeline ----------
-    // structureless cloud -> S-shaped line -> ring -> torus -> cloud.
-    // [time, noise, bend, tube, pitch]; pitch looks down more on the S so it reads.
+    // structureless cloud -> line -> ring -> torus -> cloud.
+    // [time, noise, bend, tube, pitch, sway]; while it is a line the view looks
+    // down on it and barely sways, so its shape reads clearly.
     var KEYS = [
-        [0, 1, 0, THIN, 0.62],
-        [3.5, 1, 0, THIN, 1.2],
-        [6.5, 0, 0, THIN, 1.2],
-        [9.5, 0, 0, THIN, 1.2],
-        [12.5, 0, 1, THIN, 0.62],
-        [15, 0, 1, THIN, 0.62],
-        [18, 0, 1, FAT, 0.62],
-        [23.5, 0, 1, FAT, 0.62],
-        [26.5, 1, 1, FAT, 0.62]
+        [0, 1, 0, THIN, 0.62, 0.42],
+        [3.5, 1, 0, THIN, 1.2, 0.1],
+        [6.5, 0, 0, THIN, 1.2, 0.1],
+        [9.5, 0, 0, THIN, 1.2, 0.1],
+        [12.5, 0, 1, THIN, 0.62, 0.42],
+        [15, 0, 1, THIN, 0.62, 0.42],
+        [18, 0, 1, FAT, 0.62, 0.42],
+        [23.5, 0, 1, FAT, 0.62, 0.42],
+        [26.5, 1, 1, FAT, 0.62, 0.42]
     ];
     var PERIOD = KEYS[KEYS.length - 1][0];
 
@@ -134,11 +149,12 @@
                 var e = ease((t - a[0]) / (b[0] - a[0]));
                 return {
                     noise: lerp(a[1], b[1], e), bend: lerp(a[2], b[2], e),
-                    tube: lerp(a[3], b[3], e), pitch: lerp(a[4], b[4], e)
+                    tube: lerp(a[3], b[3], e), pitch: lerp(a[4], b[4], e),
+                    sway: lerp(a[5], b[5], e)
                 };
             }
         }
-        return { noise: 1, bend: 0, tube: THIN, pitch: 0.62 };
+        return { noise: 1, bend: 0, tube: THIN, pitch: 0.62, sway: 0.42 };
     }
 
     // Position of the activity bump on the manifold at time t.
@@ -226,9 +242,9 @@
         var p = params(t);
         var noise = p.noise, bend = p.bend, tube = p.tube;
         var ext = lerp(buildCurve(bend) + tube, 1.5, noise);
-        var scale = Math.min(0.43 * w, 0.5 * h) / ext;
+        var scale = Math.min(0.43 * w, 0.44 * h) / ext;   // room for perspective at the edges
         var cx = w / 2, cy = h / 2;
-        var yaw = 0.42 * Math.sin(0.16 * t) + this.yawOff;
+        var yaw = p.sway * Math.sin(0.16 * t) + this.yawOff;
         var pitch = p.pitch + 0.12 * Math.sin(0.11 * t + 1) + this.pitchOff;
         var cyw = Math.cos(yaw), syw = Math.sin(yaw), cp = Math.cos(pitch), sp = Math.sin(pitch);
         var PERSP = 3.2;

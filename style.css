@@ -15,9 +15,9 @@
     --accent: #d9572b;        /* the travelling bump */
     --point: #15203a;         /* manifold points */
 
-    --serif: 'Newsreader', 'Iowan Old Style', Georgia, serif;
-    --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-    --mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace;
+    --display: 'Roboto', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --sans: 'Roboto', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --mono: 'Roboto Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace;
 
     --measure: 42rem;
     --radius: 14px;
@@ -87,11 +87,11 @@ body {
 ====================================
 */
 h1, h2, h3 {
-    font-family: var(--serif);
+    font-family: var(--display);
     color: var(--ink);
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1.15;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
 }
 h1 {
     font-size: clamp(2.3rem, 4.6vw, 3.5rem);
@@ -102,7 +102,9 @@ h2 {
     text-wrap: balance;
 }
 h3 {
-    font-size: 1.45rem;
+    font-size: 1.35rem;
+    font-weight: 400;
+    letter-spacing: -0.005em;
     margin-bottom: 0.4rem;
 }
 .display {
@@ -161,8 +163,9 @@ em {
     min-height: 3.75rem;
 }
 .wordmark {
-    font-family: var(--serif);
-    font-size: 1.25rem;
+    font-family: var(--display);
+    font-size: 1.15rem;
+    font-weight: 500;
     color: var(--ink);
     white-space: nowrap;
 }
@@ -357,9 +360,10 @@ canvas.manifold:active {
 }
 .paper-title {
     display: block;
-    font-family: var(--serif);
-    font-size: 1.2rem;
-    line-height: 1.35;
+    font-family: var(--display);
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.4;
     color: var(--ink);
     margin-bottom: 0.3rem;
 }
@@ -370,7 +374,7 @@ canvas.manifold:active {
 }
 .paper-authors b {
     color: var(--ink);
-    font-weight: 600;
+    font-weight: 500;
 }
 .paper-venue {
     color: var(--ink-3);
