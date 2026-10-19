@@ -260,10 +260,9 @@ canvas.manifold:active {
 }
 .manifold-figure figcaption {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;     /* label centred, stages centred beneath it */
     align-items: center;
-    justify-content: space-between;
-    gap: 0.6rem 1rem;
+    gap: 0.6rem;
     margin-top: 0.5rem;
     font-family: var(--mono);
     font-size: 0.78rem;
@@ -273,6 +272,7 @@ canvas.manifold:active {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 0.35rem;
 }
 .stages li {
