@@ -297,8 +297,12 @@ canvas.manifold:active {
 .program p {
     font-size: 1.1rem;
 }
-.program .program-intro {
+.research-intro {
+    font-size: 1.2rem;
+    line-height: 1.5;
     color: var(--ink);
+    max-width: 34rem;
+    margin-bottom: 1rem;
 }
 
 /* Formation / Calibration / Anchoring */
