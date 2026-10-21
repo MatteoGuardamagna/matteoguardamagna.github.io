@@ -12,7 +12,7 @@
     --ink-3: #7a8296;
     --line: #dedad0;
     --link: #1f2f8f;          /* the navy of the original site */
-    --accent: #d9572b;        /* the travelling bump */
+    --accent: #2a62c9;        /* the travelling bump */
     --point: #15203a;         /* manifold points */
 
     --display: 'Roboto', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -32,8 +32,8 @@
         --ink-2: #b0b8cb;
         --ink-3: #7f899f;
         --line: #252f47;
-        --link: #a9b8ff;
-        --accent: #ff8458;
+        --link: #b4d4ff;
+        --accent: #9cc8ff;
         --point: #dfe5f5;
     }
 }
@@ -45,8 +45,8 @@
     --ink-2: #b0b8cb;
     --ink-3: #7f899f;
     --line: #252f47;
-    --link: #a9b8ff;
-    --accent: #ff8458;
+    --link: #b4d4ff;
+    --accent: #9cc8ff;
     --point: #dfe5f5;
 }
 
