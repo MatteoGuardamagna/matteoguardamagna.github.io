@@ -463,3 +463,10 @@ canvas.manifold:active {
         gap: 0.25rem;
     }
 }
+
+/* Superscript reference numbers */
+sup.refs {
+    font-size: 0.7em;
+    line-height: 0;
+    margin-left: 0.1em;
+}
