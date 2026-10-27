@@ -4,40 +4,8 @@
 ====================================
 */
 :root {
-    --bg: #f7f5f0;
-    --bg-alt: #efece4;
-    --surface: #ffffff;
-    --ink: #15203a;
-    --ink-2: #47506a;
-    --ink-3: #7a8296;
-    --line: #dedad0;
-    --link: #1f2f8f;          /* the navy of the original site */
-    --accent: #2a62c9;        /* the travelling bump */
-    --point: #15203a;         /* manifold points */
-
-    --display: 'Roboto', system-ui, -apple-system, 'Segoe UI', sans-serif;
-    --sans: 'Roboto', system-ui, -apple-system, 'Segoe UI', sans-serif;
-    --mono: 'Roboto Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace;
-
-    --measure: 42rem;
-    --radius: 14px;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-        --bg: #0c111d;
-        --bg-alt: #111829;
-        --surface: #151d31;
-        --ink: #e9ecf4;
-        --ink-2: #b0b8cb;
-        --ink-3: #7f899f;
-        --line: #252f47;
-        --link: #b4d4ff;
-        --accent: #9cc8ff;
-        --point: #dfe5f5;
-    }
-}
-:root[data-theme="dark"] {
+    /* Navy & ice: the site always uses this palette, whatever the visitor's system theme */
+    color-scheme: dark;
     --bg: #0c111d;
     --bg-alt: #111829;
     --surface: #151d31;
@@ -46,8 +14,15 @@
     --ink-3: #7f899f;
     --line: #252f47;
     --link: #b4d4ff;
-    --accent: #9cc8ff;
-    --point: #dfe5f5;
+    --accent: #9cc8ff;        /* ice: labels, links, the travelling bump */
+    --point: #dfe5f5;         /* manifold points */
+
+    --display: 'Roboto', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --sans: 'Roboto', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --mono: 'Roboto Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace;
+
+    --measure: 42rem;
+    --radius: 14px;
 }
 
 *,
