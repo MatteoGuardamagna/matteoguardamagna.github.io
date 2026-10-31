@@ -8,7 +8,8 @@
  * single bend (the line) to a constant (a closed ring); a fat tube on the ring
  * is the torus.
  *
- * No dependencies. Respects prefers-reduced-motion and only draws while visible.
+ * No dependencies. Always animates (also with reduced-motion settings, as requested),
+ * but only advances while the canvas is on screen.
  */
 (function () {
     'use strict';
@@ -24,7 +25,6 @@
     var TRAIL = 28;
     var N = 241;       // samples along the curve
 
-    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     var darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
     // ---------- helpers ----------
@@ -160,7 +160,7 @@
     // Position of the activity bump on the manifold at time t.
     function state(t) { return [frac(0.045 * t), frac(0.11 * t)]; }
 
-    var COUNT = 2400, STILL = 20, START = 1.5;
+    var COUNT = 2400, START = 1.5;
 
     // ---------- view ----------
     function View(canvas, stageEls) {
@@ -169,7 +169,7 @@
         this.stageEls = stageEls;
         this.stage = -1;
         this.w = 0; this.h = 0;
-        this.visible = false;
+        this.visible = true;      // until the IntersectionObserver says otherwise
         this.dirty = true;
         this.yawOff = 0; this.pitchOff = 0;
 
@@ -382,9 +382,9 @@
         var colors = {};
         function readColors() {
             var cs = getComputedStyle(document.documentElement);
-            colors.point = cs.getPropertyValue('--point').trim() || '#15203a';
-            colors.accent = cs.getPropertyValue('--accent').trim() || '#d9572b';
-            colors.bg = cs.getPropertyValue('--bg').trim() || '#f7f5f0';
+            colors.point = cs.getPropertyValue('--point').trim() || '#dfe5f5';
+            colors.accent = cs.getPropertyValue('--accent').trim() || '#9cc8ff';
+            colors.bg = cs.getPropertyValue('--bg').trim() || '#0c111d';
             view.dirty = true;
         }
         readColors();
@@ -404,16 +404,20 @@
         }
 
         // The clock only runs while the canvas is on screen, so the story starts when it is seen.
+        // The next frame is booked first, so one failed frame can never freeze the animation.
         var clock = START, last = null;
         function frame(now) {
-            var animate = !reduceMotion.matches;
-            if (last !== null && view.visible) clock += Math.min(0.1, (now - last) / 1000);
-            last = now;
-            if (view.visible && (animate || view.dirty)) {
-                view.draw(animate ? clock : STILL, colors);
-                view.dirty = false;
-            }
             requestAnimationFrame(frame);
+            if (typeof now !== 'number') now = Date.now();
+            if (last !== null && view.visible) clock += Math.min(0.1, Math.max(0, (now - last) / 1000));
+            last = now;
+            if (!view.visible) return;
+            if (!view.w) view.resize();
+            try {
+                view.draw(clock, colors);
+            } catch (err) {
+                if (window.console) console.warn('manifold frame skipped:', err);
+            }
         }
         requestAnimationFrame(frame);
     }
