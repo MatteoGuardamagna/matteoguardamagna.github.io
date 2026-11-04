@@ -43,180 +43,139 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Roboto+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Nunito:wght@600&display=swap">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='16' rx='13' ry='8' fill='none' stroke='%231f2f8f' stroke-width='3'/%3E%3Ccircle cx='27' cy='17' r='3.5' fill='%239cc8ff'/%3E%3C/svg%3E">
 </head>
 
 <body>
 
-    <header class="site-header">
-        <div class="container header-inner">
-            <a class="wordmark" href="#top">Matteo Guardamagna</a>
-            <nav class="main-nav" aria-label="Main">
-                <a href="#research">research</a>
-                <a href="CV_MatteoGuardamagna.pdf">cv</a>
-                <a href="https://scholar.google.com/citations?user=wGGPUeEAAAAJ">publications</a>
-                <a href="https://bsky.app/profile/matteoguardamagna.bsky.social">bluesky</a>
+    <header class="bar">
+        <div class="wrap">
+            <a class="brand" href="#top">Matteo Guardamagna</a>
+            <nav aria-label="Main">
+                <a href="#research">Research</a>
+                <a href="CV_MatteoGuardamagna.pdf">CV</a>
+                <a href="https://scholar.google.com/citations?user=wGGPUeEAAAAJ">Publications</a>
+                <a href="https://bsky.app/profile/matteoguardamagna.bsky.social">Bluesky</a>
             </nav>
         </div>
     </header>
 
-    <main id="top" itemscope itemtype="http://schema.org/Person">
+    <main id="top" class="wrap" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="url" content="https://matteoguardamagna.github.io/">
-
-        <!-- ABOUT -->
-        <section id="about" class="about">
-            <div class="container about-grid">
-                <div class="about-text">
-                    <p class="eyebrow">About me</p>
-                    <h1 itemprop="name">Matteo Guardamagna</h1>
-                    <p>
-                        I am a Systems Neuroscientist, focused on understanding brain development. I am currently a
-                        <strong itemprop="jobTitle">Postdoctoral Fellow</strong> in the
-                        <a href="https://www.ntnu.edu/kavli/moser-group#/view/about" itemprop="worksFor" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">Moser Group</span></a>
-                        at the Kavli Institute for Systems Neuroscience in Trondheim, where I study the <em>ontogeny</em>
-                        of our sense of space.
-                    </p>
-                    <p>
-                        During my PhD I developed new <a href="https://iopscience.iop.org/article/10.1088/1741-2552/ac6771/meta">implant systems</a>
-                        for mice and studied the spatial and temporal code of CA1 place
-                        cells<sup class="refs"><a href="https://www.cell.com/cell-reports/fulltext/S2211-1247(23)00033-5">1</a>,<a href="https://www.nature.com/articles/s41467-025-61453-2">2</a></sup>.
-                    </p>
-                    <p class="aside">
-                        Passions on the side: poetry, history, cooking &amp; foraging, and the Mediterranean sea.
-                        <a href="https://www.youtube.com/watch?v=WRS9Gek4V5Q" aria-label="A song">||</a>
-                    </p>
-                </div>
-                <div class="portrait">
-                    <img itemprop="image" src="images/profile-pic.png" alt="Matteo Guardamagna giving a talk" width="1102" height="1362">
-                </div>
+        <section class="row">
+            <div class="portrait"><img itemprop="image" src="images/profile-pic.png" alt="Matteo Guardamagna giving a talk" width="1102" height="1362"></div>
+            <div class="text-col">
+            <p class="label">About me</p>
+            <h1 class="lead" itemprop="name">Matteo Guardamagna</h1>
+            <p>
+                I am a Systems Neuroscientist, focused on understanding brain development. I am currently a
+                <strong itemprop="jobTitle">Postdoctoral Fellow</strong> in the
+                <a href="https://www.ntnu.edu/kavli/moser-group#/view/about" itemprop="worksFor" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">Moser Group</span></a>
+                at the Kavli Institute for Systems Neuroscience in Trondheim, where I study the <em>ontogeny</em>
+                of our sense of space.
+            </p>
+            <p>
+                During my PhD I developed new <a href="https://iopscience.iop.org/article/10.1088/1741-2552/ac6771/meta">implant systems</a>
+                for mice and studied the spatial and temporal code of CA1 place
+                cells<sup class="refs"><a href="https://www.cell.com/cell-reports/fulltext/S2211-1247(23)00033-5">1</a>,<a href="https://www.nature.com/articles/s41467-025-61453-2">2</a></sup>.
+            </p>
+            <p class="aside">
+                Passions on the side: poetry, history, cooking &amp; foraging, and the Mediterranean sea.
+                <a href="https://www.youtube.com/watch?v=WRS9Gek4V5Q" aria-label="A song">||</a>
+            </p>
             </div>
         </section>
 
-        <!-- RESEARCH -->
-        <section id="research" class="section section-alt">
-            <div class="container">
-                <div class="research-grid">
-                    <div class="research-head">
-                        <p class="eyebrow">About my research</p>
-                        <h2 class="display">Developmental Algorithms for Natural Behaviors</h2>
-                        <p class="research-intro">
-                            Studying population dynamics in development, linking neural computation to behavior beyond the
-                            level of single cells.
-                        </p>
-                        <p class="lede">
-                            My work aims to (i) identify the developmental algorithms by which neural computations emerge
-                            from developing circuits, (ii) establish how they are calibrated by the developing body and brain
-                            states, and (iii) determine how they become anchored to the world and the ecological niche in which
-                            animals develop.
-                        </p>
-                    </div>
-
-                    <figure class="manifold-figure">
-                        <canvas id="hero-manifold" class="manifold" role="img"
-                                aria-label="Animation: a structureless cloud of flickering points, standing for neural activity, organises into a gently bent line, closes into a ring and inflates into a torus, while a bright bump of activity travels across it."></canvas>
-                        <figcaption>
-                            <span class="figure-label">neural manifolds</span>
-                        </figcaption>
-                    </figure>
-                </div>
-
-                <div class="program">
-                    <p>
-                        From the earliest days of postnatal life, developing animals already produce a rich repertoire of
-                        behaviors. We still lack an account of the population-level computations that developing circuits
-                        perform, and of how they support this early behavioral repertoire.
-                    </p>
-                    <p>
-                        My research will address this gap by combining high-density electrophysiology in developing
-                        animals with 3D reconstruction of behavior and physiological state, analysis of population geometry,
-                        and cell-type-specific genetic manipulations. We will uncover the developmental algorithms for sensory,
-                        motor and cognitive functions that give rise to natural behaviors.
-                    </p>
-                </div>
-
-                <ol class="steps">
-                    <li>
-                        <h3>Formation</h3>
-                        <p>How does population geometry emerge from developing circuitry?</p>
-                    </li>
-                    <li>
-                        <h3>Calibration</h3>
-                        <p>How does it acquire its dynamics from a developing body?</p>
-                    </li>
-                    <li>
-                        <h3>Anchoring</h3>
-                        <p>How does it become referenced to the animal’s world and ecological niche?</p>
-                    </li>
-                </ol>
+        <section id="research" class="row">
+            <div class="figure-col">
+            <figure>
+                <canvas id="hero-manifold" class="manifold" data-points="1100" role="img"
+                        aria-label="Animation: a structureless cloud of flickering points, standing for neural activity, organises into a gently bent line, closes into a ring and inflates into a torus, while a bright bump of activity travels across it."></canvas>
+                <figcaption>Neural manifolds</figcaption>
+            </figure>
+            </div>
+            <div class="text-col">
+            <p class="label">About my research</p>
+            <h2 class="lead">Developmental Algorithms for Natural Behaviors</h2>
+            <p class="intro">
+                Studying population dynamics in development, linking neural computation to behavior beyond the
+                level of single cells.
+            </p>
+            <p>
+                My work aims to (i) identify the developmental algorithms by which neural computations emerge
+                from developing circuits, (ii) establish how they are calibrated by the developing body and brain
+                states, and (iii) determine how they become anchored to the world and the ecological niche in which
+                animals develop.
+            </p>
+            <p>
+                From the earliest days of postnatal life, developing animals already produce a rich repertoire of
+                behaviors. We still lack an account of the population-level computations that developing circuits
+                perform, and of how they support this early behavioral repertoire.
+            </p>
+            <p>
+                My research will address this gap by combining high-density electrophysiology in developing
+                animals with 3D reconstruction of behavior and physiological state, analysis of population geometry,
+                and cell-type-specific genetic manipulations. We will uncover the developmental algorithms for sensory,
+                motor and cognitive functions that give rise to natural behaviors.
+            </p>
+            <ol class="aims">
+                <li><h3>Formation</h3><p>How does population geometry emerge from developing circuitry?</p></li>
+                <li><h3>Calibration</h3><p>How does it acquire its dynamics from a developing body?</p></li>
+                <li><h3>Anchoring</h3><p>How does it become referenced to the animal’s world and ecological niche?</p></li>
+            </ol>
             </div>
         </section>
 
-        <!-- SELECTED WORK -->
-        <section id="work" class="section">
-            <div class="container">
-                <div class="section-head">
-                    <p class="eyebrow">Selected work</p>
-                    <h2>Papers</h2>
-                </div>
-                <ul class="paper-list">
-                    <li>
-                        <span class="paper-year">2026</span>
-                        <div>
-                            <a class="paper-title" href="https://doi.org/10.64898/2026.03.10.710908">Toroidal topology of grid-cell activity precedes spatial navigation during development</a>
-                            <span class="paper-authors"><b>Guardamagna M</b>, Hermansen E, Carpenter J, Lykken CM, Dunn BA, Moser EI, Moser M-B</span>
-                            <span class="paper-venue">bioRxiv</span>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="paper-year">2026</span>
-                        <div>
-                            <a class="paper-title" href="https://doi.org/10.64898/2026.07.02.736055">The emergence of a novel CA1 spatial map requires direct entorhinal input</a>
-                            <span class="paper-authors">Chadney* OMT, <b>Guardamagna* M</b>, Dörr F, Descamps LAL, Stella F, Battaglia FP, Kentros CG</span>
-                            <span class="paper-venue">bioRxiv</span>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="paper-year">2025</span>
-                        <div>
-                            <a class="paper-title" href="https://www.nature.com/articles/s41467-025-61453-2">Direct entorhinal control of CA1 temporal coding</a>
-                            <span class="paper-authors"><b>Guardamagna M</b>, Chadney O, Stella F, Zhang Q, Kentros C, Battaglia FP</span>
-                            <span class="paper-venue">Nature Communications</span>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="paper-year">2023</span>
-                        <div>
-                            <a class="paper-title" href="https://www.cell.com/cell-reports/fulltext/S2211-1247(23)00033-5">Heterogeneity of network and coding states in mouse CA1 place cells</a>
-                            <span class="paper-authors"><b>Guardamagna M</b>, Stella F, Battaglia FP</span>
-                            <span class="paper-venue">Cell Reports</span>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="paper-year">2022</span>
-                        <div>
-                            <a class="paper-title" href="https://iopscience.iop.org/article/10.1088/1741-2552/ac6771/meta">The Hybrid Drive: a chronic implant device combining tetrode arrays with silicon probes for layer-resolved ensemble electrophysiology in freely moving mice</a>
-                            <span class="paper-authors"><b>Guardamagna M</b>, Eichler R, Pedrosa R, Aarts A, Meyer AF, Battaglia FP</span>
-                            <span class="paper-venue">Journal of Neural Engineering · <a href="https://github.com/MatteoGuardamagna/Hybrid_drive">code &amp; designs</a></span>
-                        </div>
-                    </li>
-                </ul>
-                <p class="more-link"><a href="https://scholar.google.com/citations?user=wGGPUeEAAAAJ">All publications on Google Scholar →</a></p>
+        <section id="work" class="row row-work">
+            <div class="side">
+                <p class="label">Selected work</p>
+                <h2 class="lead">Papers</h2>
+            </div>
+            <div class="text-col">
+            <ul class="papers">
+                <li>
+                    <a class="title" href="https://doi.org/10.64898/2026.03.10.710908">Toroidal topology of grid-cell activity precedes spatial navigation during development</a>
+                    <span class="authors"><b>Guardamagna M</b>, Hermansen E, Carpenter J, Lykken CM, Dunn BA, Moser EI, Moser M-B</span>
+                    <span class="venue">bioRxiv, 2026</span>
+                </li>
+                <li>
+                    <a class="title" href="https://doi.org/10.64898/2026.07.02.736055">The emergence of a novel CA1 spatial map requires direct entorhinal input</a>
+                    <span class="authors">Chadney* OMT, <b>Guardamagna* M</b>, Dörr F, Descamps LAL, Stella F, Battaglia FP, Kentros CG</span>
+                    <span class="venue">bioRxiv, 2026</span>
+                </li>
+                <li>
+                    <a class="title" href="https://www.nature.com/articles/s41467-025-61453-2">Direct entorhinal control of CA1 temporal coding</a>
+                    <span class="authors"><b>Guardamagna M</b>, Chadney O, Stella F, Zhang Q, Kentros C, Battaglia FP</span>
+                    <span class="venue">Nature Communications, 2025</span>
+                </li>
+                <li>
+                    <a class="title" href="https://www.cell.com/cell-reports/fulltext/S2211-1247(23)00033-5">Heterogeneity of network and coding states in mouse CA1 place cells</a>
+                    <span class="authors"><b>Guardamagna M</b>, Stella F, Battaglia FP</span>
+                    <span class="venue">Cell Reports, 2023</span>
+                </li>
+                <li>
+                    <a class="title" href="https://iopscience.iop.org/article/10.1088/1741-2552/ac6771/meta">The Hybrid Drive: a chronic implant device combining tetrode arrays with silicon probes for layer-resolved ensemble electrophysiology in freely moving mice</a>
+                    <span class="authors"><b>Guardamagna M</b>, Eichler R, Pedrosa R, Aarts A, Meyer AF, Battaglia FP</span>
+                    <span class="venue">Journal of Neural Engineering, 2022 · <a href="https://github.com/MatteoGuardamagna/Hybrid_drive">code &amp; designs</a></span>
+                </li>
+            </ul>
+            <p><a href="https://scholar.google.com/citations?user=wGGPUeEAAAAJ">All publications on Google Scholar</a></p>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="container footer-inner">
+    <footer>
+        <div class="wrap">
             <p>Matteo Guardamagna · Kavli Institute for Systems Neuroscience, NTNU · Trondheim</p>
-            <nav class="footer-links" aria-label="Elsewhere">
-                <a href="mailto:matteo.guardamagna@ntnu.no">email</a>
-                <a href="CV_MatteoGuardamagna.pdf">cv</a>
-                <a href="https://scholar.google.com/citations?user=wGGPUeEAAAAJ">scholar</a>
-                <a href="https://github.com/MatteoGuardamagna">github</a>
-                <a href="https://bsky.app/profile/matteoguardamagna.bsky.social">bluesky</a>
-            </nav>
+            <p class="foot-links">
+                <a href="mailto:matteo.guardamagna@ntnu.no">Email</a>
+                <a href="CV_MatteoGuardamagna.pdf">CV</a>
+                <a href="https://scholar.google.com/citations?user=wGGPUeEAAAAJ">Scholar</a>
+                <a href="https://github.com/MatteoGuardamagna">GitHub</a>
+                <a href="https://bsky.app/profile/matteoguardamagna.bsky.social">Bluesky</a>
+            </p>
         </div>
     </footer>
 

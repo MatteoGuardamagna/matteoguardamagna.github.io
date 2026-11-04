@@ -173,7 +173,7 @@
         this.dirty = true;
         this.yawOff = 0; this.pitchOff = 0;
 
-        var n = COUNT, rand = rng(11);
+        var n = +canvas.getAttribute('data-points') || COUNT, rand = rng(11);
         this.n = n;
         this.u = new Float32Array(n);
         this.v = new Float32Array(n);
@@ -248,7 +248,7 @@
         var pitch = p.pitch + 0.12 * Math.sin(0.11 * t + 1) + this.pitchOff;
         var cyw = Math.cos(yaw), syw = Math.sin(yaw), cp = Math.cos(pitch), sp = Math.sin(pitch);
         var PERSP = 3.2;
-        var base = Math.max(0.8, Math.min(1.25, w / 420));
+        var base = Math.max(0.6, Math.min(1.25, w / 420));
 
         function project(x, y, z, i) {
             var x1 = x * cyw + z * syw;
@@ -409,7 +409,7 @@
         function frame(now) {
             requestAnimationFrame(frame);
             if (typeof now !== 'number') now = Date.now();
-            if (last !== null && view.visible) clock += Math.min(0.1, Math.max(0, (now - last) / 1000));
+            if (last !== null && view.visible) clock += Math.min(0.5, Math.max(0, (now - last) / 1000));   // keeps real time even at a low frame rate
             last = now;
             if (!view.visible) return;
             if (!view.w) view.resize();
